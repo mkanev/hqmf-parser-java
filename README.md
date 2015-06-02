@@ -57,9 +57,9 @@ This README would normally document whatever steps are necessary to get your app
 [EP From CMS 2014 eCQM here](http://cms.gov/Regulations-and-Guidance/Legislation/EHRIncentivePrograms/Downloads/2014_eCQM_EligibleProfessional_July2014.zip)
 
 ## Technologies ##
-* maven
-* java 7
-* groovy
+* [maven](http://maven.apache.org/)
+* [java 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
+* [groovy](http://www.groovy-lang.org/)
 
 ## Other ##
 
