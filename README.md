@@ -22,7 +22,7 @@ You will be shown the general usage.
 
 To use:
 
-java -jar hqmf-parser-groovy.jar <command-line-options>
+java -jar hqmf-parser-java-jar-with-dependencies.jar  <command-line-options>
 
 command-line options:
 
@@ -39,13 +39,13 @@ command-line options:
 ## Examples ##
 
 ### Example 1: Information from an eMeasure xml file ###
-java -jar hqmf-parser-java.jar --file /tmp/CMS129v3.xml
+java -jar hqmf-parser-java-jar-with-dependencies.jar  --file /tmp/CMS129v3.xml
 
 ### Example 2: Process xml file in zip ###
-java -jar hqmf-parser-java.jar --emeasurezip /tmp/CMS129v3.zip
+java -jar hqmf-parser-java-jar-with-dependencies.jar  --emeasurezip /tmp/CMS129v3.zip
 
 ### Example 3: Process all zips of emeasures in zip [UNDER DEVELOPMENT] ###
-java -jar hqmf-parser-java.jar --emeasurezip /tmp/2014_eCQM_EligibleProfessional_July2014.zip
+java -jar hqmf-parser-java-jar-with-dependencies.jar  --emeasurezip /tmp/2014_eCQM_EligibleProfessional_July2014.zip
 
 
 behind the scenes a QualityMeasureDocument class is instantiated.  It contains the methods needed to access interesting parts of a HQMF QualityMeasureDocument .xml.
