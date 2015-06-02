@@ -37,7 +37,6 @@ public class QualityMeasureDocumentMultipleMeasureZipFileProcessor extends BaseZ
 		List<String> filenamesInZip = ZipUtil.getFileNames(zipFile);
 		List<String> filenames = new ArrayList<>();
 		for (String candidate : filenamesInZip) {
-			System.out.println("Candidate: "+candidate);
 			if (candidate.endsWith(".zip")) {
 				filenames.add(candidate);
 			}
