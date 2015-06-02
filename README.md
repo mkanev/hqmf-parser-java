@@ -44,7 +44,7 @@ java -jar hqmf-parser-java-jar-with-dependencies.jar  --file /tmp/CMS129v3.xml
 ### Example 2: Process xml file in zip ###
 java -jar hqmf-parser-java-jar-with-dependencies.jar  --emeasurezip /tmp/CMS129v3.zip
 
-### Example 3: Process all zips of emeasures in zip [UNDER DEVELOPMENT] ###
+### Example 3: Process all zips of emeasures in zip ###
 java -jar hqmf-parser-java-jar-with-dependencies.jar  --emeasurezip /tmp/2014_eCQM_EligibleProfessional_July2014.zip
 
 

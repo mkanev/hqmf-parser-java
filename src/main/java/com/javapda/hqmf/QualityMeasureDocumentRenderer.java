@@ -13,11 +13,6 @@ public class QualityMeasureDocumentRenderer {
 	private QualityMeasureDocument qualityMeasureDocument;
 	
 	static final String[] renderOrder = new String[] {
-		"raceGuid",
-		"sexGuid",
-		"payerGuid",
-		"ethnicityGuid",
-		"supplementalFields",
 		"measureIdentifier",
 		"nqf",
 		"versionNumber",
@@ -27,6 +22,11 @@ public class QualityMeasureDocumentRenderer {
 		"denominatorGuid",
 		"denominatorExceptionsGuid",
 		"denominatorExclusionsGuid",
+		"raceGuid",
+		"sexGuid",
+		"payerGuid",
+		"ethnicityGuid",
+		"supplementalFields",
 	};
 
 	public static String renderHeader() {

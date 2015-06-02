@@ -1,6 +1,7 @@
 package com.javapda.hqmf;
 
 import java.io.File;
+import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -42,6 +43,12 @@ public class QualityMeasureDocumentMain {
 		}
 		for( Object obj : ZipUtil.getFileNameAndLengths(zipFile)) {
 			System.out.println(obj);
+		}
+//		System.out.println(new QualityMeasureDocumentMultipleMeasureZipFileProcessor(zipFile).process());
+		List<QualityMeasureDocument> docs = new QualityMeasureDocumentMultipleMeasureZipFileProcessor(zipFile).process();
+		System.out.println(QualityMeasureDocumentRenderer.renderHeader());
+		for (QualityMeasureDocument qualityMeasureDocument : docs) {
+			System.out.println(new QualityMeasureDocumentRenderer(qualityMeasureDocument).render());
 		}
 		
 	}
