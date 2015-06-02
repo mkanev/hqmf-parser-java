@@ -3,6 +3,9 @@ To be able to make sense of the HQMF eMeasure .xml files.  One of the requiremen
 
 Using this library one can glean this information from the files a bit more easily.
 
+## What this is not... ##
+ Not to be confused with Marc Hadley's hqmf-parser (https://github.com/hadleynet/hqmf-parser).
+
 ### How do I get set up? ###
 
 Once you have cloned the project (git clone https://github.com/javapda/hqmf-parser-java.git) you can
@@ -12,6 +15,8 @@ get started by running:
 *  java -jar target/hqmf-parser-java-jar-with-dependencies.jar.jar 
 
 You will be shown the general usage.
+
+
 
 # Usage #
 
@@ -23,8 +28,11 @@ command-line options:
 
 java -jar ... <command-line-options>
 command-line options:
+
    --file path/to/eMeasure.xml
+
    --emeasurezip path/to/single/eMeasure/zipFile.xml
+
    --emeasurebundle path/to/bundle/eMeasures/zipFile.xml
 
 
