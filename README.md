@@ -56,6 +56,11 @@ This README would normally document whatever steps are necessary to get your app
 ### Where can I get the HQMF eMeasure files? ###
 [EP From CMS 2014 eCQM here](http://cms.gov/Regulations-and-Guidance/Legislation/EHRIncentivePrograms/Downloads/2014_eCQM_EligibleProfessional_July2014.zip)
 
+## Technologies ##
+* maven
+* java 7
+* groovy
 
+## Other ##
 
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
