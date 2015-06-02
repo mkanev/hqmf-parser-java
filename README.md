@@ -53,6 +53,8 @@ behind the scenes a QualityMeasureDocument class is instantiated.  It contains t
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
+### Where can I get the HQMF eMeasure files? ###
+[EP From CMS 2014 eCQM here](http://cms.gov/Regulations-and-Guidance/Legislation/EHRIncentivePrograms/Downloads/2014_eCQM_EligibleProfessional_July2014.zip)
 
 
 
