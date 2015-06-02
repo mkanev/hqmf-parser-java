@@ -43,7 +43,8 @@ public class TestData {
 	}
 
 	public static File emeasureBundleZip() {
-		File file = new File(xmlFilesDirectory(),"EMeasureZipBundle.zip");
+		File file = new File(xmlFilesDirectory(),"2014_eCQM_EligibleProfessional_July2014.zip");
+		//File file = new File(xmlFilesDirectory(),"EMeasureZipBundle.zip");
 		assertNotNull(file);
 		assertTrue(file.exists());
 		return file;

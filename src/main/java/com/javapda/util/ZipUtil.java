@@ -83,20 +83,8 @@ public class ZipUtil {
 					Paths.get(zipFile.getAbsolutePath()), null)) {
 
 				Iterable<Path> dirs = fs.getRootDirectories();
-				for (Path name : dirs) {
-					// System.err.println(name);
-					try (DirectoryStream<Path> stream = Files
-							.newDirectoryStream(name)) {
-						for (Path file : stream) {
-							// System.out.println(file.getFileName());
-							filenames.add(file.getFileName() + "");
-						}
-					} catch (IOException | DirectoryIteratorException x) {
-						// IOException can never be thrown by the iteration.
-						// In this snippet, it can only be thrown by
-						// newDirectoryStream.
-						System.err.println(x);
-					}
+				for (Path directory : dirs) {
+					getFilesFromDirectory(directory,filenames);
 				}
 				// Files.copy(
 				// fs.getPath(fileInZipName),
@@ -106,6 +94,27 @@ public class ZipUtil {
 			e.printStackTrace();
 		}
 		return filenames;
+	}
+
+	private static void getFilesFromDirectory(Path directory,List<String> filenames) {
+		try (DirectoryStream<Path> stream = Files
+				.newDirectoryStream(directory)) {
+			for (Path file : stream) {
+				//System.out.println(file.getFileName() + ":"+file.getFileName().toString().endsWith("/"));
+				if(file.getFileName().toString().endsWith("/")) {
+					getFilesFromDirectory(file, filenames);
+				} else {
+					// System.out.println(file.getFileName());
+					filenames.add(directory.toString() + file.getFileName() + "");
+//					filenames.add(file.getFileName() + "");
+				}
+			}
+		} catch (IOException | DirectoryIteratorException x) {
+			// IOException can never be thrown by the iteration.
+			// In this snippet, it can only be thrown by
+			// newDirectoryStream.
+			System.err.println(x);
+		}
 	}
 
 	static boolean verbose = false;
