@@ -60,10 +60,38 @@ public class QualityMeasureDocumentMainTest {
 
 	}
 
+	
+	
 	@Test
-	public void testFile() {
+	public void testFileProportion() {
 		String[] args = new String[] { "--file",
 				TestData.xmlFileCms129v4().getAbsolutePath()
+
+		};
+
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		PrintStream ps = new PrintStream(baos);
+		// IMPORTANT: Save the old System.out!
+		PrintStream originalSystemOut = System.out;
+		// Tell Java to use your special stream
+		System.setOut(ps);
+		// Print some output: goes to your special stream
+		QualityMeasureDocumentMain.main(args);
+		// Put things back
+		System.out.flush();
+		System.setOut(originalSystemOut);
+		// Show what happened
+		if (log.isDebugEnabled()) {
+			log.debug("Here: " + baos.toString());
+		}
+
+
+	}
+
+	@Test
+	public void testFileContinuousVariable() {
+		String[] args = new String[] { "--file",
+				TestData.xmlFileCms179v3().getAbsolutePath()
 
 		};
 

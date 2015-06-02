@@ -25,6 +25,12 @@ public class TestData {
 	}
 
 	
+	public static File xmlFileCms179v3() {
+		File file = new File(xmlFilesDirectory(),"CMS179v3.xml");
+		assertNotNull(file);
+		assertTrue(file.exists());
+		return file;
+	}
 	public static File xmlFileCms129v4() {
 		File file = new File(xmlFilesDirectory(),"CMS129v4.xml");
 		assertNotNull(file);

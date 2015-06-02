@@ -12,6 +12,7 @@ public class QualityMeasureDocumentImpl implements QualityMeasureDocument {
    public String toString() {
       """
         description: ${this.description}
+        measureType: ${measureType}
         measureIdentifier: ${measureIdentifier}
         nqf: ${nqf}
         versionNumber: ${versionNumber}
@@ -24,6 +25,16 @@ public class QualityMeasureDocumentImpl implements QualityMeasureDocument {
         denominatorExclusionsGuid: ${denominatorExclusionsGuid}
         denominatorExceptionsGuid: ${denominatorExceptionsGuid}
       """
+   }
+   @Override
+   public String getMeasureType() {
+          for (subjectOf in qrdadoc.subjectOf) {
+           if (subjectOf.measureAttribute.code.@code == "MSRSCORE") {
+			   return subjectOf.measureAttribute.value.@code;
+           }
+      }
+      
+      null
    }
    @Override
    public String getMeasureIdentifier() {

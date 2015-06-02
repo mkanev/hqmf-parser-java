@@ -25,7 +25,7 @@ public class QualityMeasureDocumentMain {
 			return;
 		}
 		if ("--file".equals(args[0])) {
-			System.out.println(QualityMeasureDocumentFactory.create(new File(args[1])).toString());
+			emeasureFile(new File(args[1]));
 		} else if ("--emeasurezip".equals(args[0])) {
 			emeasureZip(new File(args[1]));
 		} else if ("--emeasurebundle".equals(args[0])) {
@@ -36,15 +36,16 @@ public class QualityMeasureDocumentMain {
 		}
 	}
 
+	private static void emeasureFile(File emeasureXmlFile) {
+		System.out.println(QualityMeasureDocumentRenderer.renderHeader());
+		System.out.println(new QualityMeasureDocumentRenderer(QualityMeasureDocumentFactory.create(emeasureXmlFile)).render());
+		
+	}
+
 	private static void emeasureBundle(File zipFile) {
-		System.out.println(String.format("emeasureBundle on %s",zipFile.getAbsolutePath()));
 		if(!ZipUtil.isZipFile(zipFile)) {
 			throw new IllegalArgumentException(String.format("File '%s' is NOT a zip file",zipFile.getAbsolutePath()));
 		}
-		for( Object obj : ZipUtil.getFileNameAndLengths(zipFile)) {
-			System.out.println(obj);
-		}
-//		System.out.println(new QualityMeasureDocumentMultipleMeasureZipFileProcessor(zipFile).process());
 		List<QualityMeasureDocument> docs = new QualityMeasureDocumentMultipleMeasureZipFileProcessor(zipFile).process();
 		System.out.println(QualityMeasureDocumentRenderer.renderHeader());
 		for (QualityMeasureDocument qualityMeasureDocument : docs) {
@@ -54,13 +55,8 @@ public class QualityMeasureDocumentMain {
 	}
 
 	private static void emeasureZip(File zipFile) {
-		System.out.println(String.format("emeasureZip on %s",zipFile.getAbsolutePath()));
 		if(!ZipUtil.isZipFile(zipFile)) {
 			throw new IllegalArgumentException(String.format("File '%s' is NOT a zip file",zipFile.getAbsolutePath()));
-		}
-		System.out.println(System.getProperty("java.io.tmpdir"));
-		for( Object obj : ZipUtil.getFileNameAndLengths(zipFile)) {
-			System.out.println(obj);
 		}
 		System.out.println(new QualityMeasureDocumentSingleMeasureZipFileProcessor(zipFile).process());
 	}

@@ -13,6 +13,7 @@ public class QualityMeasureDocumentRenderer {
 	private QualityMeasureDocument qualityMeasureDocument;
 	
 	static final String[] renderOrder = new String[] {
+		"measureType",
 		"measureIdentifier",
 		"nqf",
 		"versionNumber",

@@ -1,6 +1,8 @@
 package com.javapda.hqmf;
 
 public interface QualityMeasureDocument {
+	String getMeasureType();
+	
 	String getMeasureIdentifier();
 
 	String getNqf();
