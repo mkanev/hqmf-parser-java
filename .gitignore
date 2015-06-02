@@ -1,0 +1,16 @@
+build/
+src/main/resources/rebel.xml
+log.roo
+target
+.classpath
+.project
+.settings
+war
+velocity.log
+velocity.log*
+coverage.ec
+*.war
+/target
+jmeter.log
+*.swp
+**/.DS_Store
