@@ -16,6 +16,8 @@ public interface QualityMeasureDocument {
 	String getVersionSpecificIdentifier();
 
 	String getVersionNeutralIdentifier();
+	
+	String getInitialPatientPopulationGuid();
 
 	String getNumeratorGuid();
 

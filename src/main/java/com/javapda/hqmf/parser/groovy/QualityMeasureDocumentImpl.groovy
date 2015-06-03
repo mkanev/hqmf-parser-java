@@ -24,6 +24,7 @@ public class QualityMeasureDocumentImpl implements QualityMeasureDocument {
         denominatorGuid: ${denominatorGuid}
         denominatorExclusionsGuid: ${denominatorExclusionsGuid}
         denominatorExceptionsGuid: ${denominatorExceptionsGuid}
+		initialPatientPopulationGuid: ${initialPatientPopulationGuid}
       """
    }
    @Override
@@ -48,6 +49,16 @@ public class QualityMeasureDocumentImpl implements QualityMeasureDocument {
       }
       
       null
+   }
+   @Override
+   public String getInitialPatientPopulationGuid() {
+          for (entry in qrdadoc.component.section.entry) {
+              if(entry.observation.value.@code == "IPP" && entry.observation.@actionNegationInd!="true") {
+                return entry.observation.id.@root
+              }
+          }
+          null
+
    }
    @Override
    public String getDenominatorGuid() {

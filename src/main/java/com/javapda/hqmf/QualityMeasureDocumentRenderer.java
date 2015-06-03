@@ -19,6 +19,7 @@ public class QualityMeasureDocumentRenderer {
 		"versionNumber",
 		"versionSpecificIdentifier",
 		"versionNeutralIdentifier",
+		"initialPatientPopulationGuid",
 		"numeratorGuid",
 		"denominatorGuid",
 		"denominatorExceptionsGuid",
@@ -28,6 +29,7 @@ public class QualityMeasureDocumentRenderer {
 		"payerGuid",
 		"ethnicityGuid",
 		"supplementalFields",
+		"description",
 	};
 
 	public static String renderHeader() {

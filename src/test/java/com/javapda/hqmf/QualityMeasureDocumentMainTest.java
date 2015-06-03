@@ -18,11 +18,10 @@ public class QualityMeasureDocumentMainTest {
 				TestData.emeasureBundleZip().getAbsolutePath() };
 
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		PrintStream ps = new PrintStream(baos);
 		// IMPORTANT: Save the old System.out!
 		PrintStream originalSystemOut = System.out;
 		// Tell Java to use your special stream
-		System.setOut(ps);
+		System.setOut(new PrintStream(baos));
 		// Print some output: goes to your special stream
 		QualityMeasureDocumentMain.main(args);
 		// Put things back
@@ -32,6 +31,7 @@ public class QualityMeasureDocumentMainTest {
 		if (log.isDebugEnabled()) {
 			log.debug("Here: " + baos.toString());
 		}
+		System.out.println(baos.toString());
 
 	}
 
@@ -43,11 +43,10 @@ public class QualityMeasureDocumentMainTest {
 		};
 
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		PrintStream ps = new PrintStream(baos);
 		// IMPORTANT: Save the old System.out!
 		PrintStream originalSystemOut = System.out;
 		// Tell Java to use your special stream
-		System.setOut(ps);
+		System.setOut(new PrintStream(baos));
 		// Print some output: goes to your special stream
 		QualityMeasureDocumentMain.main(args);
 		// Put things back
@@ -70,11 +69,10 @@ public class QualityMeasureDocumentMainTest {
 		};
 
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		PrintStream ps = new PrintStream(baos);
 		// IMPORTANT: Save the old System.out!
 		PrintStream originalSystemOut = System.out;
 		// Tell Java to use your special stream
-		System.setOut(ps);
+		System.setOut(new PrintStream(baos));
 		// Print some output: goes to your special stream
 		QualityMeasureDocumentMain.main(args);
 		// Put things back
@@ -96,11 +94,10 @@ public class QualityMeasureDocumentMainTest {
 		};
 
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		PrintStream ps = new PrintStream(baos);
 		// IMPORTANT: Save the old System.out!
 		PrintStream originalSystemOut = System.out;
 		// Tell Java to use your special stream
-		System.setOut(ps);
+		System.setOut(new PrintStream(baos));
 		// Print some output: goes to your special stream
 		QualityMeasureDocumentMain.main(args);
 		// Put things back
