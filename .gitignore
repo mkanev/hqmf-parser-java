@@ -14,3 +14,4 @@ coverage.ec
 jmeter.log
 *.swp
 **/.DS_Store
+*.iml
